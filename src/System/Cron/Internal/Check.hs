@@ -12,7 +12,7 @@ import           Data.Semigroup              (sconcat)
 import           Data.Time                   (Day, DiffTime, UTCTime (..),
                                               addUTCTime, fromGregorianValid,
                                               toGregorian)
-import           Data.Time.Calendar.WeekDate
+import qualified Data.Time.Calendar.WeekDate as WD
 import qualified Data.Traversable            as FT
 -------------------------------------------------------------------------------
 import           System.Cron.Types           as CT
@@ -79,7 +79,7 @@ getDOW d
   | iso8601DOW == 7 = 0
   | otherwise       = iso8601DOW
   where
-    (_, _, iso8601DOW) = toWeekDate d
+    (_, _, iso8601DOW) = WD.toWeekDate d
 
 
 -------------------------------------------------------------------------------

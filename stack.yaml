@@ -1,7 +1,9 @@
-resolver: lts-15.2
+resolver: nightly-2023-11-30
 packages:
   - '.'
 flags:
   cron:
     lib-Werror: true
 extra-package-dbs: []
+
+allow-newer: true
